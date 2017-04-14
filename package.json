@@ -4,11 +4,17 @@
   "description": "A simple app to get the weather.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "start": "webpack-dev-server --open"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/dianafisher/weather-app.git"
+  },
+  "babel": {
+    "presets": [
+      "env",
+      "react"
+    ]
   },
   "author": "Diana Fisher",
   "license": "ISC",
