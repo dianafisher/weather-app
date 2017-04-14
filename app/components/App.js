@@ -1,12 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
-// var React = require('react');
-// var ReactRouter = require('react-router-dom');
-// var Router = ReactRouter.BrowserRouter;
-// var Route = ReactRouter.Route;
-// var Switch = ReactRouter.Switch;
-
 var Main = require('./Main');
 
 class App extends React.Component {
