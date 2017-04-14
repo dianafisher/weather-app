@@ -1,10 +1,10 @@
-// load in react using an ES6 module
 import React from 'react';
 import { render } from 'react-dom';
 import { PropTypes } from 'prop-types';
-import App from './components/App';
 
-require('./index.css');
+import App from './components/App';
+import './index.css'
+
 
 render(
   <App />,
