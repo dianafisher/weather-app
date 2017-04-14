@@ -1,10 +1,12 @@
-var React = require('react');
-var ReactDOM = require('react-dom');
-var PropTypes = require('prop-types');
-var App = require('./components/App');
+// load in react using an ES6 module
+import React from 'react';
+import { render } from 'react-dom';
+import { PropTypes } from 'prop-types';
+import App from './components/App';
+
 require('./index.css');
 
-ReactDOM.render(
+render(
   <App />,
   document.getElementById('app')
 );
