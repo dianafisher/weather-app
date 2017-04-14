@@ -19,11 +19,11 @@ class Main extends React.Component {
   render() {
     return (
       <div className='main-container' style={styles.content}>
-        <h1 style={styles.white}>Hello, Main!</h1>
+        <h1 style={styles.white}>Hello, I still work!</h1>
       </div>
 
     )
   }
 }
 
-module.exports = Main;
+export default Main;
