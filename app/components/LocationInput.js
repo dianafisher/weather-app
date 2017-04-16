@@ -1,5 +1,8 @@
 import React from 'react';
 
+/*
+  LocationInput is a controlled component
+*/
 class LocationInput extends React.Component {
 
   constructor(props) {
@@ -10,17 +13,22 @@ class LocationInput extends React.Component {
       location: ''
     };
 
-    this.handleInputChange = this.handleInputChange.bind(this);
+    this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
 
-  handleInputChange(event) {
-    var value = event.target.value;
+  handleChange(event) {
+    const value = event.target.value;
     console.log(value);
 
     // update our state
-    this.setState({location: value});
+    this.setState(function() {
+      return {
+        // force uppercase, just for fun
+        location: value.toUpperCase()
+      }
+    });
   }
 
   handleSubmit(event) {
@@ -33,11 +41,11 @@ class LocationInput extends React.Component {
       <form className='column' onSubmit={this.handleSubmit}>
         <input
           className='form-control'
-          id='location'
           placeholder='San Jose, CA'
           type='text'
           autoComplete='off'
-          onChange={this.handleInputChange}
+          value={this.state.location}
+          onChange={this.handleChange}
         />
         <button
           className='button'
