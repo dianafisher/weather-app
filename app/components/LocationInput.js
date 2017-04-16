@@ -34,6 +34,7 @@ class LocationInput extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('submit button pressed');
+    // what has the user entered?
   }
 
   render() {

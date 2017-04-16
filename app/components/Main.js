@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LocationInput from './LocationInput';
+import Forecast from './Forecast';
 
 const styles = {
   content: {
@@ -25,8 +26,9 @@ class Main extends React.Component {
         <h1 style={styles.prompt}>Hello, I still work! 😀 🎈 🎉</h1>
         <h1 style={styles.prompt}>Enter a City and State</h1>
         <LocationInput
-          
+
         ></LocationInput>
+        <Forecast></Forecast>
       </div>
 
     )
