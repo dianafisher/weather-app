@@ -1,6 +1,5 @@
 import React, { Component } from 'react';
 import LocationInput from './LocationInput';
-import Forecast from './Forecast';
 
 const styles = {
   content: {
@@ -28,7 +27,6 @@ class Main extends React.Component {
         <LocationInput
 
         ></LocationInput>
-        <Forecast></Forecast>
       </div>
 
     )
