@@ -15,18 +15,38 @@ const styles = {
     color: '#fff',
     fontSize: '45px',
     fontWeight: '100',
+  },
+  root: {
+    width: '100%',
+    height: '92%',
+  },
+  header: {
+    display: 'flex',
+    justifyContent: 'space-between',
+    alignItems: 'center',
+    background: '#fc8740',
+    color: '#fff',
+    padding: '5px'
   }
 }
 
 class Main extends React.Component {
   render() {
     return (
-      <div className='main-container' style={styles.content}>
-        <h1 style={styles.prompt}>Hello, I still work! 😀 🎈 🎉</h1>
-        <h1 style={styles.prompt}>Enter a City and State</h1>
-        <LocationInput
+      <div style={styles.root}>
+        <div style={styles.header}>
+          <h2>Clever Title</h2>
+          <LocationInput
 
-        ></LocationInput>
+          ></LocationInput>
+        </div>
+        <div className='main-container' style={styles.content}>
+          <h1 style={styles.prompt}>Hello, I still work! 😀 🎈 🎉</h1>
+          <h1 style={styles.prompt}>Enter a City and State</h1>
+          <LocationInput
+
+          ></LocationInput>
+        </div>
       </div>
 
     )
