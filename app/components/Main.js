@@ -27,6 +27,9 @@ const styles = {
     background: '#fc8740',
     color: '#fff',
     padding: '5px'
+  },
+  h2: {
+    margin: '0',
   }
 }
 
@@ -35,15 +38,15 @@ class Main extends React.Component {
     return (
       <div style={styles.root}>
         <div style={styles.header}>
-          <h2>Clever Title</h2>
-          <LocationInput
+          <h2 style={styles.h2}>Clever Title</h2>
+          <LocationInput direction='row'
 
           ></LocationInput>
         </div>
         <div className='main-container' style={styles.content}>
           <h1 style={styles.prompt}>Hello, I still work! 😀 🎈 🎉</h1>
           <h1 style={styles.prompt}>Enter a City and State</h1>
-          <LocationInput
+          <LocationInput direction='column'
 
           ></LocationInput>
         </div>

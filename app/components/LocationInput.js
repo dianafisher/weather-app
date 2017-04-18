@@ -1,4 +1,22 @@
 import React from 'react';
+import PropTypes from 'prop-types';
+
+const styles = {
+  form: {
+    display: 'flex',
+    flexDirection: 'row',
+    justifyContent: 'center',
+    alignItems: 'center',
+    maxWidth: '300px',
+    alignSelf: 'right',
+  },
+  input: {
+
+  },
+  button: {
+    margin: '10px',    
+  }
+}
 
 /*
   LocationInput is a controlled component
@@ -10,6 +28,7 @@ class LocationInput extends React.Component {
 
     // initialize our state
     this.state = {
+      direction: props.direction,
       location: ''
     };
 
@@ -39,7 +58,7 @@ class LocationInput extends React.Component {
 
   render() {
     return (
-      <form className='column' onSubmit={this.handleSubmit}>
+      <form className='column' style={styles.form} onSubmit={this.handleSubmit}>
         <input
           className='form-control'
           placeholder='San Jose, CA'
@@ -49,7 +68,8 @@ class LocationInput extends React.Component {
           onChange={this.handleChange}
         />
         <button
-          className='button'
+          className='btn btn-success'
+          style={styles.button}
           type='submit'
         >
           Get Weather
@@ -57,6 +77,14 @@ class LocationInput extends React.Component {
       </form>
     )
   }
+}
+
+LocationInput.propTypes = {
+  direction: PropTypes.string.isRequired
+}
+
+LocationInput.defaultProps = {
+  direction: 'row'
 }
 
 export default LocationInput;

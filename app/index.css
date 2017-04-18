@@ -15,7 +15,7 @@ body {
   margin: 0 auto;
 }
 
-.button {
+/*.button {
   color: #fff;
   background-color: #5cb85c;
   border-color: #4cae4c;
@@ -30,9 +30,6 @@ body {
 }
 
 .button:hover:enabled {
-  /*background:
-    linear-gradient(#1a1a1a, #0a0a0a);
-  color: #fff;*/
   color: #fff;
   background-color: #449d44;
   border-color: #398439;
@@ -41,9 +38,9 @@ body {
 
 .button:active {
   transform: translateY(1px);
-}
+}*/
 
-.form-control {
+/*.form-control {
   display: block;
   width: 400px;
   height: 24px;
@@ -56,4 +53,4 @@ body {
   border: 1px solid #ccc;
   border-radius: 4px;
   box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
-}
+}*/
