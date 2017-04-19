@@ -29,8 +29,7 @@ class App extends React.Component {
           <Header />
           <Switch>
             <Route exact path='/' component={Main} />
-            <Route path='/bubblegum' component={Bubblegum} />
-            <Route path='/forecast/:city' component={Forecast} />
+            <Route path='/forecast' component={Forecast} />
             <Route render={ function () {
               return <p>Not Found</p>
             }} />

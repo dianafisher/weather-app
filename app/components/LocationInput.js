@@ -82,7 +82,8 @@ class LocationInput extends React.Component {
           className='btn btn-success'
           style={styles.button}
           to={{
-            pathname: '/forecast/' + this.state.location
+            pathname: '/forecast',
+            search: `?city=${this.state.location}`
           }}
         >Get Weather</Link>
       </form>
@@ -91,7 +92,7 @@ class LocationInput extends React.Component {
 }
 
 LocationInput.propTypes = {
-  direction: PropTypes.string.isRequired,  
+  direction: PropTypes.string.isRequired,
 }
 
 LocationInput.defaultProps = {
