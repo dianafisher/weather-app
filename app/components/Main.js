@@ -7,6 +7,7 @@ const styles = {
     backgroundSize: 'cover',
     display: 'flex',
     flexDirection: 'column',
+    justifyContent: 'center',
     alignItems: 'center',
     height: '100%',
     width: '100%'
@@ -44,7 +45,6 @@ class Main extends React.Component {
           ></LocationInput>
         </div>
         <div className='main-container' style={styles.content}>
-          <h1 style={styles.prompt}>Hello, I still work! 😀 🎈 🎉</h1>
           <h1 style={styles.prompt}>Enter a City and State</h1>
           <LocationInput direction='column'
 
