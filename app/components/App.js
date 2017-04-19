@@ -9,15 +9,15 @@ class App extends React.Component {
   render() {
     return (
       <BrowserRouter>
-        <div className="container">
-          <Switch>
-            <Route exact path='/' component={Main} />
-            <Route path='/forecast/:city' component={Forecast} />
-            <Route render={ function () {
-              return <p>Not Found</p>
-            }} />
-          </Switch>
-        </div>
+
+        <Switch>
+          <Route exact path='/' component={Main} />
+          <Route path='/forecast/:city' component={Forecast} />
+          <Route render={ function () {
+            return <p>Not Found</p>
+          }} />
+        </Switch>
+        
       </BrowserRouter>
     )
   }
