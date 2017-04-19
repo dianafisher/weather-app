@@ -24,10 +24,9 @@ class App extends React.Component {
 
   render() {
     return (
-      <div style={styles.root}>
-        <Header />
-        <BrowserRouter>
-
+      <BrowserRouter>
+        <div style={styles.root}>
+          <Header />
           <Switch>
             <Route exact path='/' component={Main} />
             <Route path='/bubblegum' component={Bubblegum} />
@@ -36,9 +35,9 @@ class App extends React.Component {
               return <p>Not Found</p>
             }} />
           </Switch>
+        </div>
+      </BrowserRouter>
 
-        </BrowserRouter>
-      </div>
     )
   }
 }

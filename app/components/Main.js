@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import LocationInput from './LocationInput';
+import { Link } from 'react-router-dom';
 
 const styles = {
   content: {
@@ -23,12 +24,6 @@ class Main extends React.Component {
 
   constructor(props) {
     super(props);
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(location) {
-    console.log('Main: handleSubmit for', location);
   }
 
   render() {
@@ -38,7 +33,6 @@ class Main extends React.Component {
           <h1 style={styles.prompt}>Enter a City and State</h1>
           <LocationInput
             direction='column'
-            onSubmit={this.handleSubmit}
           ></LocationInput>
         </div>
 

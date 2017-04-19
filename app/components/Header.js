@@ -1,5 +1,7 @@
 import React from 'react';
 import LocationInput from './LocationInput';
+import { NavLink } from 'react-router-dom';
+import { Redirect } from 'react-router';
 
 const styles = {
   header: {
@@ -24,16 +26,16 @@ class Header extends React.Component {
   }
 
   handleSubmit(location) {
-    console.log('Header: handleSubmit for', location);
+    console.log('Header handleSubmit for ', location);
   }
 
   render() {
+
     return (
       <div style={styles.header}>
         <h2 style={styles.h2}>Clever Title</h2>
         <LocationInput
           direction='row'
-          onSubmit={this.handleSubmit}
         ></LocationInput>
       </div>
     )

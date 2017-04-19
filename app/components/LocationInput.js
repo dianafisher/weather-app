@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 
 let styles = {
   form: {
@@ -70,22 +70,28 @@ class LocationInput extends React.Component {
           value={this.state.location}
           onChange={this.handleChange}
         />
-        <button
+        {/* <button
           className='btn btn-success'
           style={styles.button}
-          type='submit'
-        >
+          type='button'
+          onClick={this.handleChange}
+          >
           Get Weather
-        </button>
-        
+        </button> */}
+        <Link
+          className='btn btn-success'
+          style={styles.button}
+          to={{
+            pathname: '/forecast/' + this.state.location
+          }}
+        >Get Weather</Link>
       </form>
     )
   }
 }
 
 LocationInput.propTypes = {
-  direction: PropTypes.string.isRequired,
-  onSubmit: PropTypes.func.isRequired,
+  direction: PropTypes.string.isRequired,  
 }
 
 LocationInput.defaultProps = {
