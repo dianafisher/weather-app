@@ -17,21 +17,6 @@ const styles = {
     fontSize: '45px',
     fontWeight: '100',
   },
-  root: {
-    width: '100%',
-    height: '92%',
-  },
-  header: {
-    display: 'flex',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    background: '#fc8740',
-    color: '#fff',
-    padding: '5px'
-  },
-  h2: {
-    margin: '0',
-  }
 }
 
 class Main extends React.Component {

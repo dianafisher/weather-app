@@ -1,5 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
+// import { Link } from 'react-router-dom';
 
 let styles = {
   form: {
@@ -76,6 +77,7 @@ class LocationInput extends React.Component {
         >
           Get Weather
         </button>
+        
       </form>
     )
   }
