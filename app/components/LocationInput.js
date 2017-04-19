@@ -1,7 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 
-const styles = {
+let styles = {
   form: {
     display: 'flex',
     flexDirection: 'row',
@@ -10,11 +10,8 @@ const styles = {
     maxWidth: '300px',
     alignSelf: 'right',
   },
-  input: {
-
-  },
   button: {
-    margin: '10px',    
+    margin: '10px',
   }
 }
 
@@ -28,7 +25,6 @@ class LocationInput extends React.Component {
 
     // initialize our state
     this.state = {
-      direction: props.direction,
       location: ''
     };
 
@@ -57,6 +53,9 @@ class LocationInput extends React.Component {
   }
 
   render() {
+    // get the flex direction of the form from our props.
+    styles.form.flexDirection = this.props.direction;
+
     return (
       <form className='column' style={styles.form} onSubmit={this.handleSubmit}>
         <input
