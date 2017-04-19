@@ -39,9 +39,8 @@ class LocationInput extends React.Component {
 
     // update our state
     this.setState(function() {
-      return {
-        // force uppercase, just for fun
-        location: value.toUpperCase()
+      return {        
+        location: value
       }
     });
   }
