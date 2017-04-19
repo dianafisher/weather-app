@@ -5,10 +5,15 @@ import {getForecast} from '../utils/api';
 
 class Forecast extends React.Component {
 
+  constructor(props) {
+    super(props);
+    console.log('match', this.props.match);
+  }
+
   componentDidMount() {
     console.log('Forecast component mounted');
 
-    getForecast('Santa Cruz, CA')
+    getForecast(this.props.match)
       .then(function (data) {
         console.log(data);
         const list = data.list;

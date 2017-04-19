@@ -39,7 +39,7 @@ class LocationInput extends React.Component {
 
     // update our state
     this.setState(function() {
-      return {        
+      return {
         location: value
       }
     });
@@ -48,7 +48,11 @@ class LocationInput extends React.Component {
   handleSubmit(event) {
     event.preventDefault();
     console.log('submit button pressed');
-    // what has the user entered?
+
+    // pass the submit up via props
+    this.props.onSubmit(
+      this.state.location
+    )
   }
 
   render() {
@@ -78,7 +82,8 @@ class LocationInput extends React.Component {
 }
 
 LocationInput.propTypes = {
-  direction: PropTypes.string.isRequired
+  direction: PropTypes.string.isRequired,
+  onSubmit: PropTypes.func.isRequired,
 }
 
 LocationInput.defaultProps = {

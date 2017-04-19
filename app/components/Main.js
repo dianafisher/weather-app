@@ -35,22 +35,28 @@ const styles = {
 }
 
 class Main extends React.Component {
+
+  constructor(props) {
+    super(props);
+
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(location) {
+    console.log('Main: handleSubmit for', location);
+  }
+
   render() {
     return (
-      <div style={styles.root}>
-        <div style={styles.header}>
-          <h2 style={styles.h2}>Clever Title</h2>
-          <LocationInput direction='row'
 
-          ></LocationInput>
-        </div>
         <div className='main-container' style={styles.content}>
           <h1 style={styles.prompt}>Enter a City and State</h1>
-          <LocationInput direction='column'
-
+          <LocationInput
+            direction='column'
+            onSubmit={this.handleSubmit}
           ></LocationInput>
         </div>
-      </div>
+
 
     )
   }
