@@ -1,6 +1,7 @@
 import React from 'react';
 import moment from 'moment';
 import _ from 'lodash';
+import queryString from 'query-string';
 import {getForecast} from '../utils/api';
 
 class Forecast extends React.Component {
@@ -9,12 +10,28 @@ class Forecast extends React.Component {
     super(props);
     console.log(this.props);
     console.log('match', this.props.match);
+
+    this.state = {
+      city: null,
+    }
   }
 
   componentDidMount() {
     console.log('Forecast component mounted');
 
-    getForecast(this.props.match)
+    // parse the query string
+    const parsed = queryString.parse(location.search);
+    console.log(parsed.city);
+    const city = parsed.city;
+
+    // update our state
+    this.setState(function () {
+      return {
+        city: city
+      }
+    });
+
+    getForecast(city)
       .then(function (data) {
         console.log(data);
         const list = data.list;
@@ -57,7 +74,7 @@ class Forecast extends React.Component {
   render() {
     return (
       <div>
-        <h2>Forecast</h2>
+        <h1 className='forecast-header'>{this.state.city}</h1>
       </div>
     )
   }

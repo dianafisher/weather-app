@@ -6,3 +6,10 @@ body,
   margin: 0;
   padding: 0;
 }
+
+.forecast-header {
+  font-size: 65px;
+  color: #333;
+  font-weight: 100;
+  text-align: center;
+}
