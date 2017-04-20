@@ -14,6 +14,7 @@ class Forecast extends React.Component {
 
     this.state = {
       city: null,
+      days: []
     }
   }
 
@@ -25,8 +26,6 @@ class Forecast extends React.Component {
     console.log(parsed.city);
     const city = parsed.city;
 
-    let days = [];
-
     // update our state
     this.setState(function () {
       return {
@@ -35,11 +34,24 @@ class Forecast extends React.Component {
     });
 
     getForecast(city)
+      .then( function (days) {
+        console.log('Forecast', days);
+
+        // update our state
+        this.setState(function () {
+          return {
+            city: city,
+            days: days
+          }
+        });
+      }.bind(this));
+/*
+    getForecast(city)
       .then(function (data) {
         console.log(data);
         const list = data.list;
 
-        // Group the results by day        
+        // Group the results by day
         let current = {
           dateStr: null,
           results: []
@@ -121,15 +133,16 @@ class Forecast extends React.Component {
         //   }
         // });
 
-      });
+        // update our state
+        this.setState(function () {
+          return {
+            city: city,
+            days: days
+          }
+        });
 
-      // update our state
-      this.setState(function () {
-        return {
-          city: city,
-          days: days
-        }
-      });
+      }.bind(this));
+*/
   }
 
   render() {
@@ -137,7 +150,13 @@ class Forecast extends React.Component {
       <div>
         <h1 className='forecast-header'>{this.state.city}</h1>
         <div className="forecast-container">
-          <DayContainer></DayContainer>
+          {
+            this.state.days.map(day => <DayContainer
+              key={day.dateStr}
+              data={day}
+                                       />)
+          }
+
         </div>
       </div>
     )

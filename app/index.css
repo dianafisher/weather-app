@@ -13,3 +13,21 @@ body,
   font-weight: 100;
   text-align: center;
 }
+
+.dayContainer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin: 35px;
+}
+
+.weather {
+    height: 130px;
+}
+
+.subheader {
+    font-size: 30px;
+    color: #333;
+    font-weight: 100;
+}
