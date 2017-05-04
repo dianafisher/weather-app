@@ -3,6 +3,7 @@ import moment from 'moment';
 
 var appID = 'API_KEY';
 
+
 export function getForecast (city) {
   // return axios.get(`http://api.openweathermap.org/data/2.5/forecast?q=${city},us&APPID=${appID}`)
   //   .then( function (response) {
@@ -31,6 +32,7 @@ function groupDays (data) {
   }
 
   list.forEach(item => {
+
     // use momentjs to get the local date
     const date = moment.utc(item.dt_txt, 'YYYY-MM_DD HH:mm:ss').local();
     // console.log(date.format('dddd, MMMM Do YYYY, h:mm:ss a'));
@@ -41,6 +43,8 @@ function groupDays (data) {
     // console.log('timeStr', timeStr);
     item.dateStr = dateStr;
     item.timeStr = timeStr;
+
+    item.icon = getIconPath(item.weather);
 
     if (item.dateStr === current.dateStr) {
       current.results.push(item);
@@ -60,6 +64,16 @@ function groupDays (data) {
   console.log(days);
 
   return days;
+}
+
+function getIconPath (weather) {
+  if (weather.length === 0) {
+    return null;
+  }
+  const data = weather[0];
+  let path = `/app/images/weather-icons/${data.icon}.svg`;
+
+  return path;
 }
 
 /* Returns a Promise */
