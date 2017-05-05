@@ -25,6 +25,7 @@ class Forecast extends React.Component {
     const parsed = queryString.parse(location.search);
     console.log(parsed.city);
     const city = parsed.city;
+    this.city = city;
 
     // update our state
     this.setState(function () {
@@ -47,6 +48,17 @@ class Forecast extends React.Component {
       }.bind(this));
   }
 
+  handleClick(data) {
+    console.log('handleClick!', data);
+    // route to the details component
+    data.city = this.city;
+    console.log(this.city);
+    this.props.history.push({
+      pathname: '/details/' + this.city,
+      state: data
+    })
+  }
+
   render() {
     return (
       <div>
@@ -56,6 +68,7 @@ class Forecast extends React.Component {
             this.state.days.map(day => <DayContainer
               key={day.dt}
               data={day}
+              onClick={this.handleClick.bind(this, day)}
                                        />)
           }
 

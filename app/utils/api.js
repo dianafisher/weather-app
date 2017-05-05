@@ -18,10 +18,8 @@ export function getIconPath (weather) {
 export function getDateString (timestamp) {
   let date = moment.utc(timestamp * 1000).local();
 
-  return {
-    dateStr: date.format('dddd, MMMM Do YYYY'),
-    timeStr: date.format('h:mm:ss a'),
-  };
+  return date.format('dddd, MMMM Do YYYY');
+
 }
 
 function getQueryStringData (city) {

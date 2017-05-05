@@ -4,6 +4,7 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 import Main from './Main';
 import Forecast from './Forecast';
 import Header from './Header';
+import Details from './Details';
 
 const styles = {
   root: {
@@ -30,6 +31,7 @@ class App extends React.Component {
           <Switch>
             <Route exact path='/' component={Main} />
             <Route path='/forecast' component={Forecast} />
+            <Route path='/details/:city' component={Details} />
             <Route render={ function () {
               return <p>Not Found</p>
             }} />

@@ -7,8 +7,6 @@ class DayContainer extends React.Component {
     super(props);
   }
 
-
-
   render() {
     const data = this.props.data;
     console.log('data', data);
@@ -17,9 +15,9 @@ class DayContainer extends React.Component {
     const icon = getIconPath(data.weather);
 
     return (
-      <div className='dayContainer'>
+      <div className='dayContainer' onClick={this.props.onClick}>
         <img className='weather' src={icon} alt='Weather'></img>
-        <h2 className='subheader'>{date.dateStr}</h2>
+        <h2 className='subheader'>{date}</h2>
       </div>
     )
   }
