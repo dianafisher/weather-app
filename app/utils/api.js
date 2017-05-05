@@ -3,7 +3,6 @@ import moment from 'moment';
 
 var appID = 'API_KEY';
 
-
 export function getIconPath (weather) {
   if (weather.length === 0) {
     // return a default icon if weather array is empty
@@ -31,6 +30,12 @@ function getQueryStringData (city) {
     cnt: 5
   }
 }
+
+/*
+  To avoid unexpected requests to the server, you should call
+  encodeURIComponent on any user-entered parameters that will be
+  passed as part of a URI
+*/
 
 function encodedQueryString (queryStringData) {
   return Object.keys(queryStringData)
