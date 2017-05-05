@@ -3,7 +3,6 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import Main from './Main';
 import Forecast from './Forecast';
-import Header from './Header';
 import Details from './Details';
 import LocationInput from './LocationInput';
 
