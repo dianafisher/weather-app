@@ -10,7 +10,7 @@ class Details extends React.Component {
     this.data = this.props.location.state;
     const date = getDateString(this.data.dt);
     this.date = date;
-    console.log(date);
+    // console.log(date);
     this.icon = getIconPath(this.data.weather);
   }
 

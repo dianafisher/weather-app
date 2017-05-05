@@ -24,6 +24,16 @@ class Main extends React.Component {
 
   constructor(props) {
     super(props);
+    this.handleSubmit = this.handleSubmit.bind(this);
+  }
+
+  handleSubmit(city) {
+    console.log('Main handleSubmit for ', city);
+    console.log(this.props);
+    this.props.history.push({
+      pathname: '/forecast',
+      search: '?city=' + city
+    });
   }
 
   render() {
@@ -33,6 +43,7 @@ class Main extends React.Component {
           <h1 style={styles.prompt}>Enter a City and State</h1>
           <LocationInput
             direction='column'
+            onSubmit= { this.handleSubmit }
           ></LocationInput>
         </div>
 

@@ -1,6 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import { Link } from 'react-router-dom';
+// import { Link } from 'react-router-dom';
 
 let styles = {
   form: {
@@ -26,7 +26,7 @@ class LocationInput extends React.Component {
 
     // initialize our state
     this.state = {
-      location: ''
+      city: ''
     };
 
     this.handleChange = this.handleChange.bind(this);
@@ -41,7 +41,7 @@ class LocationInput extends React.Component {
     // update our state
     this.setState(function() {
       return {
-        location: value
+        city: value
       }
     });
   }
@@ -50,10 +50,19 @@ class LocationInput extends React.Component {
     event.preventDefault();
     console.log('submit button pressed');
 
+    console.log(this.props);
+
     // pass the submit up via props
     this.props.onSubmit(
-      this.state.location
+      this.state.city
     )
+
+    // clear the state
+    this.setState( function() {
+      return {
+        city: ''
+      }
+    })
   }
 
   render() {
@@ -70,22 +79,22 @@ class LocationInput extends React.Component {
           value={this.state.location}
           onChange={this.handleChange}
         />
-        {/* <button
+        <button
           className='btn btn-success'
           style={styles.button}
           type='button'
-          onClick={this.handleChange}
-          >
+          onClick={this.handleSubmit}
+        >
           Get Weather
-        </button> */}
-        <Link
+        </button>
+        {/* <Link
           className='btn btn-success'
           style={styles.button}
           to={{
             pathname: '/forecast',
-            search: `?city=${this.state.location}`
+            search: `?city=${this.state.city}`
           }}
-        >Get Weather</Link>
+        >Get Weather</Link> */}
       </form>
     )
   }

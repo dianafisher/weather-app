@@ -9,9 +9,9 @@ class DayContainer extends React.Component {
 
   render() {
     const data = this.props.data;
-    console.log('data', data);
+    // console.log('data', data);
     const date = getDateString(data.dt);
-    console.log(date);
+    // console.log(date);
     const icon = getIconPath(data.weather);
 
     return (

@@ -25,8 +25,13 @@ class Header extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  handleSubmit(location) {
-    console.log('Header handleSubmit for ', location);
+  handleSubmit(city) {
+    console.log('Header handleSubmit for ', city);
+    console.log(this.props);
+    this.props.history.push({
+      pathname: '/forecast',
+      search: '?city=' + city
+    });
   }
 
   render() {
@@ -36,6 +41,7 @@ class Header extends React.Component {
         <h2 style={styles.h2}>Clever Title</h2>
         <LocationInput
           direction='row'
+          onSubmit={ this.handleSubmit }
         ></LocationInput>
       </div>
     )
