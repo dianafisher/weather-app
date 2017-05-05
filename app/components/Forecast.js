@@ -13,7 +13,6 @@ class Forecast extends React.Component {
     // console.log('match', this.props.match);
 
     this.state = {
-      city: null,
       days: [],
       loading: true
     }
@@ -28,16 +27,18 @@ class Forecast extends React.Component {
     // parse the query string
     const parsed = queryString.parse(location.search);
     // console.log(parsed.city);
-    const city = parsed.city;
-    this.city = city;
+    this.city = parsed.city;
 
-    // update our state
-    this.setState(function () {
-      return {
-        city: city,
-      }
-    });
+    this.makeRequest(this.city);
+  }
 
+  // invoked when a component's props are updated
+  componentWillReceiveProps(nextProps) {
+    
+    // parse the query string
+    const parsed = queryString.parse(location.search);
+    // console.log(parsed.city);
+    this.city = parsed.city;
     this.makeRequest(this.city);
   }
 
@@ -55,7 +56,6 @@ class Forecast extends React.Component {
         // update our state
         this.setState(function () {
           return {
-            city: city,
             days: forecast.list,
             loading: false
           }

@@ -31,6 +31,13 @@ body,
     text-align: center;
 }
 
+.input-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 50;
+}
+
 .weather {
     height: 130px;
 }

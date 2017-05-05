@@ -69,7 +69,7 @@ class LocationInput extends React.Component {
     styles.form.flexDirection = this.props.direction;
 
     return (
-      <form className='column' style={styles.form} onSubmit={this.handleSubmit}>
+      <div className='input-container' style={{flexDirection: this.props.direction}}>
         <input
           className='form-control'
           placeholder='San Jose, CA'
@@ -94,7 +94,7 @@ class LocationInput extends React.Component {
             search: `?city=${this.state.city}`
           }}
         >Get Weather</Link> */}
-      </form>
+      </div>
     )
   }
 }
