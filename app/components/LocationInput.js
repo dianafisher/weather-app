@@ -36,7 +36,6 @@ class LocationInput extends React.Component {
 
   handleChange(event) {
     const value = event.target.value;
-    console.log(value);
 
     // update our state
     this.setState(function() {
@@ -76,7 +75,7 @@ class LocationInput extends React.Component {
           placeholder='San Jose, CA'
           type='text'
           autoComplete='off'
-          value={this.state.location}
+          value={this.state.city}
           onChange={this.handleChange}
         />
         <button

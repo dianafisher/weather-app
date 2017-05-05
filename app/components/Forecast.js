@@ -14,8 +14,12 @@ class Forecast extends React.Component {
 
     this.state = {
       city: null,
-      days: []
+      days: [],
+      loading: true
     }
+
+    this.handleClick = this.handleClick.bind(this);
+    this.makeRequest = this.makeRequest.bind(this);
   }
 
   componentDidMount() {
@@ -34,6 +38,16 @@ class Forecast extends React.Component {
       }
     });
 
+    this.makeRequest(this.city);
+  }
+
+  makeRequest(city) {
+    this.setState(function () {
+      return {
+        loading: true
+      }
+    });
+
     getDailyForecast(city)
       .then( function (forecast) {
         console.log('Forecast', forecast);
@@ -42,10 +56,12 @@ class Forecast extends React.Component {
         this.setState(function () {
           return {
             city: city,
-            days: forecast.list
+            days: forecast.list,
+            loading: false
           }
         });
       }.bind(this));
+
   }
 
   handleClick(data) {
@@ -61,8 +77,11 @@ class Forecast extends React.Component {
 
   render() {
     return (
+      this.state.loading === true ?
+      <h1 className='forecast-header'> Loading </h1>
+      :
       <div>
-        <h1 className='forecast-header'>{this.state.city}</h1>
+        <h1 className='forecast-header'>{this.city}</h1>
         <div className="forecast-container">
           {
             this.state.days.map(day => <DayContainer
