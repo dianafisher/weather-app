@@ -26,8 +26,8 @@ class Header extends React.Component {
   }
 
   handleSubmit(city) {
-    console.log('Header handleSubmit for', city);
-    console.log(this.props);
+    // console.log('Header handleSubmit for', city);
+    // console.log(this.props);
     this.props.history.push({
       pathname: '/forecast',
       search: '?city=' + city

@@ -9,8 +9,8 @@ class Forecast extends React.Component {
 
   constructor(props) {
     super(props);
-    console.log(this.props);
-    console.log('match', this.props.match);
+    // console.log(this.props);
+    // console.log('match', this.props.match);
 
     this.state = {
       city: null,
@@ -23,11 +23,11 @@ class Forecast extends React.Component {
   }
 
   componentDidMount() {
-    console.log('Forecast component mounted');
+    // console.log('Forecast component mounted');
 
     // parse the query string
     const parsed = queryString.parse(location.search);
-    console.log(parsed.city);
+    // console.log(parsed.city);
     const city = parsed.city;
     this.city = city;
 
@@ -50,7 +50,7 @@ class Forecast extends React.Component {
 
     getDailyForecast(city)
       .then( function (forecast) {
-        console.log('Forecast', forecast);
+        // console.log('Forecast', forecast);
 
         // update our state
         this.setState(function () {
@@ -65,10 +65,10 @@ class Forecast extends React.Component {
   }
 
   handleClick(data) {
-    console.log('handleClick!', data);
+    // console.log('handleClick!', data);
     // route to the details component
     data.city = this.city;
-    console.log(this.city);
+    // console.log(this.city);
     this.props.history.push({
       pathname: '/details/' + this.city,
       state: data

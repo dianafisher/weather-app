@@ -25,14 +25,6 @@ const styles = {
   }
 }
 
-function Bubblegum (props) {
-  return (
-    <div className="bubblegum">
-      <p>Tasty bubblegum 🍬 </p>
-    </div>
-  )
-}
-
 class App extends React.Component {
 
   render() {
@@ -44,10 +36,9 @@ class App extends React.Component {
               <div style={styles.header}>
                 <h2 style={styles.h2}>Clever Title</h2>
                 <LocationInput
+                  city='San Jose'
                   direction='row'
                   onSubmit={ function(city) {
-                    console.log('Header handleSubmit for', city);
-
                     props.history.push({
                         pathname: '/forecast',
                         search: '?city=' + city

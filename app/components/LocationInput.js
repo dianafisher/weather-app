@@ -47,9 +47,9 @@ class LocationInput extends React.Component {
 
   handleSubmit(event) {
     event.preventDefault();
-    console.log('submit button pressed');
+    // console.log('submit button pressed');
 
-    console.log(this.props);
+    // console.log(this.props);
 
     // pass the submit up via props
     this.props.onSubmit(
